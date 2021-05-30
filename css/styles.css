@@ -1,93 +1,196 @@
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+/**Core styling begins here **/
 
-td {
-    vertical-align: top;
+body{
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    line-height: 1.5em;
 }
 
 #container {
-    margin: 0 10px;
-    width: 100%;
+    /*Always use a percentage (vs. width) for width for responsive designs.
+    */
+    width: 70%;
+    margin: 10px auto;
+    background: #fff;
+    /*overflow: auto
+    If content breaks out of the container, the container will automatically create a scroll bar for the content.
+    */
+    overflow: auto;
 }
 
-#month {
-    font-size: 2.5em;
+p {
+    margin: 10px 0;
+    line-height: 1.5em; /*1.5 em = 1.5 times the length of the elements existing line height.*/
+}
+
+h1 {
+    font-size: 39px;
+    font-weight:bold;
+    margin: 20px 0 10px 0;
+    line-height: 1.2em;
+}
+
+h3 {
+    font-size: 22px;
+    margin: 10px 0; 
+}
+
+h4 {
+    font-size: 19px;
+    margin: 10px 0; 
+}
+
+/*The strong element has to be defined because the reset file makes it inherit the
+font from it's parent container, which in this case is inheriting from the container element, which is inherting from the body element.*/
+
+strong {
     font-weight: bold;
-    padding: 15px 0;
 }
 
-.weekday, .day {
-    width: calc(100%/7);
+.clearfix {
+    clear:both;
+    /*clears anything that has been floated to the right or the left*/
+}
+
+#main-header {
+    border-bottom: 5px solid #4ea0d8
+}
+
+#logo {
+    /*center elements using margin: auto, not text-align
+    make images block level in order to have them centered within the block*/
+    margin: 0 auto;
+    display: block;
+}
+
+#main-text {
+    text-align: center;
+    color: #333;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+/*floats REMAIN a part of the flow of the web page.*/
+
+#sub-1 {
+    float: left;
+    width: 48%;
+}
+
+#sub-2 {
+    float: right;
+    width: 48%
+}
+
+.points li {
+    margin-bottom: 30px;
+}
+
+.points img {
+    float: left;
+    margin-right: 5px;
+}
+
+.points h4 {
+    padding-top: 5px;
+}
+
+.content-footer {
+    border-top: 1px solid #ddd;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+#contact-form {
+    padding: 10px 15px 15px 15px;
+    background-color: #f4f4f4;
+    border: 4px solid #4ea0d8;
+    border-radius: 10px;
+    overflow: auto;
+
+}
+
+#contact-form div {
+    margin-bottom: 20px;
+}
+
+#contact-form label {
+    display: inline-block; /*allows the inline label element to be styled with a width*/
+    width: 100px;
+    font-weight: bold;
+}
+
+#contact-form input[type='text'], #contact-form input[type='email'] {
+    border: #ccc 1px solid;
+    border-radius: 5px;
+    height: 25px;
+    width: 65%;
+}
+
+#contact-form input[type='submit'] {
+    color: white;
+    background-color: #fa6e3e ;
+    border: none;
+    border-radius: 5px;
+    float: right;
+    display: block;
+    width: 125px;
+    height: 50px;
+    padding: 12px 17px;
+}
+
+#contact-form .content-footer p{
+    font-style: italic;
+    text-align: center;
+    color: #666;
+    font-size: 80%;
+}
+
+#contact-form input[type='submit']:hover {
+    background-color: #d55427 ;
+    cursor: pointer;
     
 }
 
-.day {
-    height: calc(100vh/5);
-    border: 1px solid #D7D7D7;
-    padding: 5px;
+.content-header {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
 }
 
-.day:hover {
-    background-color: #eee;
+#testimonial {
+    margin: 40px 0;
+    font-style: italic;
+    color: #666; 
 }
 
-.weekday {
+#testimonial img {
+    float: left;
+    margin-right: 20px;
+}
+
+footer#main-footer {
     text-align: center;
-    background-color: #333;
-    color: white;
-    padding: 15px;
-    text-transform: uppercase;
+    border-top: #ccc solid 1px;
+    color: #aaa;
+    padding-top: 15px;
+
 }
 
-.inactive {
-    background-color: #f5f5f5;
-}
+@media (max-width: 900px) {
 
-.number {
-    display: block;
-    box-sizing: border-box;
-    float: right;
-    width: 40px;
-    text-align: center;
-    background-color: #333;
-    color: white;
-    padding: 10px;
-    border-radius: 50%;
-}
-
-.note {
-    clear: both;
-    background-color: #E4F2F2;
-    border: 1px solid #009aaf;
-    border-radius: 5px;
-    padding: 15px 10px;
-    font-size: .8em;
-}
-.description {
-    color: #666;
-    line-height: 1.2em;
-    padding: 5px 0;
-}
-
-.time {
-    color: #009aaf;
-}
-
-@media (max-width: 768px) {
-    thead, .inactive {
-        display: none;
-    }
-
-    table, tr, tbody {
-        display: block;
-        width: 95%;
+    #container {
+        width: 80%;
         margin: 0 auto;
-    }
-    .active {
-        display:block;
+    } 
+
+    #sub-1 {
+        float: none;
         width: 100%;
     }
-
+    
+    #sub-2 {
+        float: none;
+        width: 100%;
+    }
 }
-
