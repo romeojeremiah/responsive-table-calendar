@@ -1,0 +1,93 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+td {
+    vertical-align: top;
+}
+
+#container {
+    margin: 0 10px;
+    width: 100%;
+}
+
+#month {
+    font-size: 2.5em;
+    font-weight: bold;
+    padding: 15px 0;
+}
+
+.weekday, .day {
+    width: calc(100%/7);
+    
+}
+
+.day {
+    height: calc(100vh/5);
+    border: 1px solid #D7D7D7;
+    padding: 5px;
+}
+
+.day:hover {
+    background-color: #eee;
+}
+
+.weekday {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    text-transform: uppercase;
+}
+
+.inactive {
+    background-color: #f5f5f5;
+}
+
+.number {
+    display: block;
+    box-sizing: border-box;
+    float: right;
+    width: 40px;
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.note {
+    clear: both;
+    background-color: #E4F2F2;
+    border: 1px solid #009aaf;
+    border-radius: 5px;
+    padding: 15px 10px;
+    font-size: .8em;
+}
+.description {
+    color: #666;
+    line-height: 1.2em;
+    padding: 5px 0;
+}
+
+.time {
+    color: #009aaf;
+}
+
+@media (max-width: 768px) {
+    thead, .inactive {
+        display: none;
+    }
+
+    table, tr, tbody {
+        display: block;
+        width: 95%;
+        margin: 0 auto;
+    }
+    .active {
+        display:block;
+        width: 100%;
+    }
+
+}
+
